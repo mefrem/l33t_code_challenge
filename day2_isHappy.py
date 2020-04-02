@@ -33,3 +33,14 @@ def isHappy(self, n):
             return True
         n = new_num
     return False
+
+
+# Other answers
+def is_happy(n):
+    s = { 1 }
+    
+    while n not in s:
+        s.add(n)
+        n = sum(i * i for i in map(int, str(n)))
+
+    return n == 1
